@@ -1,9 +1,6 @@
 package stepdefinitions;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -19,7 +16,7 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
+import pageobject.AddNewCustomerPage;
 import pageobject.AdminPage;
 import utilities.ReadConfig;
 
@@ -82,9 +79,66 @@ public class StepDefinition extends Base{
 
 	@Then("Verify user title page is {string}")
 	public void verify_user_title_page_is(String title) throws Exception {
-		
+		addcust=new AddNewCustomerPage(driver);
 		Thread.sleep(2000);
 		Assert.assertEquals(title, driver.getTitle());
+	    
+	}
+	
+	@When("user click on customers menu")
+	public void user_click_on_customers_menu() throws Exception {
+		
+		Thread.sleep(2000);
+	    addcust.clickOnCustoms();
+	}
+
+	@When("user click on customers menu item")
+	public void user_click_on_customers_menu_item() throws Exception {
+		Thread.sleep(1000);
+	    addcust.clickOnCustomsMenu();
+	}
+
+	@When("user click on new add button")
+	public void user_click_on_new_add_button() throws Exception {
+		Thread.sleep(1000);
+	    addcust.clickOnAddNew();
+	}
+
+	@Then("user can view add new custoer page")
+	public void user_can_view_add_new_custoer_page() {
+	    
+	}
+
+	@When("user enter customer info as {string} and {string} and {string} and {string} and {string} and {string} and {string}")
+	public void user_enter_customer_info_as_and_and_and_and_and_and(String newEmail, String newPass, String fname, String lname, String gender, String comName, String adminComment) throws Exception {
+	    addcust.setEmail(newEmail);
+	    Thread.sleep(1000);
+	    
+	    addcust.setPasswor(newPass);
+	    Thread.sleep(1000);
+	    
+	    addcust.setFirstName(fname);
+	    Thread.sleep(1000);
+	    
+	    addcust.setLastName(lname);
+	    Thread.sleep(1000);
+	    
+	    addcust.setCompanyName(comName);
+	    Thread.sleep(1000);
+	    
+	    addcust.setAdminComment(adminComment);
+	    Thread.sleep(1000);
+	    
+	    
+	}
+
+	@When("user click on save button")
+	public void user_click_on_save_button() {
+	    addcust.clickOnSave();
+	}
+
+	@Then("user can view confirmation msg {string}")
+	public void user_can_view_confirmation_msg(String string) {
 	    
 	}
 	
