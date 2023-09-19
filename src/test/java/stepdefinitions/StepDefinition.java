@@ -79,9 +79,9 @@ public class StepDefinition extends Base{
 
 	@Then("Verify user title page is {string}")
 	public void verify_user_title_page_is(String title) throws Exception {
-		//addcust=new AddNewCustomerPage(driver);
+		addcust=new AddNewCustomerPage(driver);
 		//Thread.sleep(2000);
-		//Assert.assertEquals(title, driver.getTitle());
+		Assert.assertEquals(title, driver.getTitle());
 	    
 	}
 	

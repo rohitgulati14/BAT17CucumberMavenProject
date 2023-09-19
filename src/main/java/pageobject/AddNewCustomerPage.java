@@ -17,6 +17,8 @@ public class AddNewCustomerPage {
 	
 		@FindBy (xpath = "//a[@class='nav-link active']//p[text()=' Customers']")
 		WebElement lnkcust;
+		
+		By lnkcust1=By.xpath("//a[@class='nav-link active']//p[text()=' Customers']");
 	
 		By lnkCustomes_menu= By.xpath("//a[@href='#']//p[contains(text(),'Customers')]");
 		
@@ -53,7 +55,7 @@ public class AddNewCustomerPage {
 		}
 		
 		public void clickOnCustoms() {
-			lnkcust.click();
+			ldriver.findElement(lnkCustomes_menu).click();
 		}
 		
 		public void clickOnCustomsMenu() {
