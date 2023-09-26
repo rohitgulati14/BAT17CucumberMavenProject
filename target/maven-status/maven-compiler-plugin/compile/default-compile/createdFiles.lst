@@ -1,0 +1,7 @@
+pageobject/VendorsPage.class
+pageobject/EnrollPaymentPage.class
+pageobject/PaymentPage.class
+pageobject/AddNewCustomerPage.class
+pageobject/OrderPage.class
+pageobject/AdminPage.class
+pageobject/CustomerPage.class

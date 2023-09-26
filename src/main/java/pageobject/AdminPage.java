@@ -1,6 +1,7 @@
 package pageobject;
 
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AdminPage {
 	
-	public WebDriver ldriver;
+	public static WebDriver ldriver;
 	
 	//In java project we can use below statement to store web element
 	//WebElement txtEmail1=driver.findElement(By.xpath("//input[@id='Email']"));
@@ -29,6 +30,10 @@ public class AdminPage {
 	WebElement btnLogin;
 	
 	//user defined method to perform operation on above web element
+	
+	public static void clickMethod(WebElement element) {
+		ldriver.findElement(By.xpath("element")).click();;
+		}
 	
 	public void setUsername(String uname) {
 		txtEmail.clear();

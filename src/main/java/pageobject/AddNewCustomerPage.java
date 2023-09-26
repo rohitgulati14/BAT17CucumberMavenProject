@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AddNewCustomerPage {
 	
-	public WebDriver ldriver;
+	public static WebDriver ldriver;
 
 	public AddNewCustomerPage(WebDriver rdriver) {
 		ldriver = rdriver;
@@ -49,6 +49,8 @@ public class AddNewCustomerPage {
 		By btnSave=By.xpath("//button[@name='save']");
 		
 		//methods
+		
+		
 		
 		public String getPageTitle() {
 			return ldriver.getTitle();

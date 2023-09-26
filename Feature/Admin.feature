@@ -19,6 +19,6 @@ Feature: Admin
     Then Close browser
 
     Examples: 
-      | email                  | password |
-      | admin@yourstore.com    | admin    |
-      | admin123@yourstore.com | admin    |
+      | email               | password |
+      | admin@yourstore.com | admin    |
+      | admin@yourstore.com | admin    |
